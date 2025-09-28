@@ -32,8 +32,8 @@ Before running this application, make sure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/PawanPawar11/quiz-api-app.git
-cd quiz-api-app
+git clone https://github.com/PawanPawar11/quiz-api-backend.git
+cd quiz-api-backend
 ```
 
 ### 2. Install Dependencies
