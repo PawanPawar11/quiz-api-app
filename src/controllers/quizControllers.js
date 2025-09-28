@@ -16,7 +16,7 @@ export const createQuizQuestions = async (req, res) => {
     const { quizId } = req.params;
     const { text, options, correctOptionId } = req.body;
 
-    const quizExists = Quiz.findById(quizId);
+    const quizExists = await Quiz.findById(quizId);
 
     if (!quizExists) {
       return res.status(404).send({ error: "Quiz not found" });
