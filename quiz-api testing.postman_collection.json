@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "c03545a9-ebaa-4de0-a19b-11bbdafc5cbc",
+		"name": "quiz-api testing",
+		"description": "This collection test the api endpoints regarding creating quiz title, adding question to that quiz title, fetching the title and its question from the DB and submiting the answer and getting the score from server.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37371411"
+	},
+	"item": [
+		{
+			"name": "Create Quiz Title",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Quiz on India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/quizzes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quizzes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Quiz Titles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/quizzes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quizzes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Questions to Quiz Title",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"What is the largest state in India by area?\",\r\n    \"options\": [\r\n        {\"id\":\"opt1\", \"text\": \"Madhya Pradesh\"},\r\n        {\"id\":\"opt2\", \"text\": \"Rajasthan\"},\r\n        {\"id\":\"opt3\", \"text\": \"Maharashtra\"},\r\n        {\"id\":\"opt4\", \"text\": \"Uttar Pradesh\"}\r\n    ],\r\n    \"correctOptionId\": \"opt2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/quizzes/68d92e1bbeff7dda38f35754/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quizzes",
+						"68d92e1bbeff7dda38f35754",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Questions of Quiz Title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/quizzes/68d92e1bbeff7dda38f35754/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quizzes",
+						"68d92e1bbeff7dda38f35754",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Answer & Get Score",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"answers\": [\r\n    {\"questionId\": \"68d92ec6beff7dda38f35757\", \"selectedOptionId\": \"opt2\"}\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/quizzes/68d92e1bbeff7dda38f35754/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quizzes",
+						"68d92e1bbeff7dda38f35754",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
